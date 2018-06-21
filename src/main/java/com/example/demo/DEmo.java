@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import java.io.File;
+import java.io.FileFilter;
+
 public class DEmo {
 
 	// Can be done directly
@@ -43,9 +46,27 @@ public class DEmo {
 	// channelSftp.put("C:/Users/shgujarathi/Desktop/SFTPSample.txt",
 	// "SFTPSample.txt");
 	// System.out.println("Pushing files from local to Remote Server- SUCCESS");
-	
-	
-	//String fileToServerpath = "C:/Users/shgujarathi/Desktop/SFTPSample.txt";
-	//String fileFromServerPath = "C:/Users/shgujarathi/Desktop/Spring-POC";
+
+	// String fileToServerpath = "C:/Users/shgujarathi/Desktop/SFTPSample.txt";
+	// String fileFromServerPath = "C:/Users/shgujarathi/Desktop/Spring-POC";
+
+	public static File lastFileModified(String dir) {
+		File fl = new File(dir);
+		File[] files = fl.listFiles(new FileFilter() {
+			public boolean accept(File file) {
+				return file.isFile();
+			}
+		});
+		long lastMod = Long.MIN_VALUE;
+		File choice = null;
+		for (File file : files) {
+			System.out.println(file.getName());
+			if (file.lastModified() > lastMod && file.getName().endsWith(".txt")) {
+				choice = file;
+				lastMod = file.lastModified();
+			}
+		}
+		return choice;
+	}
 
 }

@@ -75,23 +75,5 @@ public class JSCHAPP {
 	 * public static void main(String[] args) { new JSCHAPP().send(); }
 	 */
 
-	public static File lastFileModified(String dir) {
-		File fl = new File(dir);
-		File[] files = fl.listFiles(new FileFilter() {
-			public boolean accept(File file) {
-				return file.isFile();
-			}
-		});
-		long lastMod = Long.MIN_VALUE;
-		File choice = null;
-		for (File file : files) {
-			System.out.println(file.getName());
-			if (file.lastModified() > lastMod && file.getName().endsWith(".txt")) {
-				choice = file;
-				lastMod = file.lastModified();
-			}
-		}
-		return choice;
-	}
 
 }
