@@ -14,9 +14,10 @@ public class JschSftpApplication {
 
 	}
 
+	// Scheduler which will invoke send method for every 15 Seconds
 	@Scheduled(initialDelay = 1000, fixedRate = 15000)
 	public void run() {
-		new JSCHAPP().send();
+		new JschApp().send();
 	}
 
 }

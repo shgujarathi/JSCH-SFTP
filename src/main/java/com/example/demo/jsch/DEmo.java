@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.jsch;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -68,5 +68,17 @@ public class DEmo {
 		}
 		return choice;
 	}
+	
+	private String sftphost = "10.142.159.48";
+	private int sftpport = 22;
+	private String sftpuser = "tester";
+	private String sftppass = "password";
+	private String sftpworkingdir = "/";
+	private String localpath = "C:/Users/shgujarathi/Desktop/AllFiles";
+	private String sftpdestdir = "/imported";
+	
+	/*System.out.println("GETTING FILES FROM REMOTE SERVER - Successful");
+	
+	System.out.println("PUSHING FROM LOCAL TO REMOTE - Successful");*/
 
 }
