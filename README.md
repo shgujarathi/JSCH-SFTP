@@ -1,6 +1,6 @@
 # JSCH-SFTP
 Remote Server Connection
-In This POC remote mock server(Rebex is Used , Rebex ZIP file is downloaded and .exe file is executed which will host remote server in local)
+In This POC remote mock server(Rebex is Used , Rebex ZIP file is downloaded from (https://www.sftp.net/servers) and .exe file is executed which will host remote server in local)
 Remote Host-IP, User and password will be given in remote server console which are used in POC
 
 This POC used JSCH Library for sending and receiving files from remote server to local.
